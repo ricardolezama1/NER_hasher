@@ -1,5 +1,8 @@
 # NER_news
 
+Using the below scripts, you can extract persons and organizations. I recommend that you drop clean texts, '\n' ("new line seperated") texts. 
+Count the entities and roll out with a json with the org/person entities. 
+
 Using spacy, you can hash the entities extracted from a corpus. We will use the lighter Spanish language model from Spacy's natural language toolkit. 
 ```
 import spacy
