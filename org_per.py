@@ -3,7 +3,7 @@
 Created on Sat Nov 28 12:25:20 2020
 
 @author: Ricardo Lezama
-Count the number of tames ANY
+Count the number of times a particular entity occurs. Using
 """
 
 import spacy
