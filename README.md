@@ -39,3 +39,4 @@ tokensdictionary = org_per.map_entities(entities)
  }
  
  ```
+This final json formatted/dictionary style count for named entities along with frequencies is sufficient for pandas/matplotlib visualizations. 
