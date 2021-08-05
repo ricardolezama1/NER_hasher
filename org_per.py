@@ -3,7 +3,7 @@
 Created on Sat Nov 28 12:25:20 2020
 
 @author: Ricardo Lezama
-Count the number of times a particular entity occurs. Using
+Count the number of tames ANY
 """
 
 import spacy
@@ -47,6 +47,7 @@ def map_entities(tokens):
                 hash_map[word] = hash_map[word] + 1
             else:
                 hash_map[word] = 1
+       
         return hash_map
     else:
         return None
@@ -63,13 +64,16 @@ def plot_terms(topic, data):
     
     Return frecuencia en encabezados.    
     """
-    terms = data.keys()
-    frequency = data.values()
-    y_pos = np.arange(len(terms))
+    filter_ones = {term:frequency for term, frequency in data.items() if frequency != 1}  
+    terms = filter_ones.keys()
+    frequency = filter_ones.values()   
+    y_pos = np.arange(len(terms),step=1)
+    x_pos = np.arange(1,15, step=1)
     plt.barh(y_pos, frequency, align='center', alpha=1)
-    plt.yticks(y_pos, terms)
+    plt.yticks(y_pos, terms, fontsize=12)
+    plt.xticks(x_pos)
     plt.xlabel('Frecuencia en encabezados')
-    plt.title('Entidades nombradas - Categoria:' + str(topic))
+    plt.title(str(topic), fontsize=14)
     plt.tight_layout()
     plt.show()
     
