@@ -39,4 +39,21 @@ tokensdictionary = org_per.map_entities(entities)
  }
  
  ```
-This final json formatted/dictionary style count for named entities along with frequencies is sufficient for pandas/matplotlib visualizations. 
+This final json formatted/dictionary style count for named entities along with frequencies is sufficient for pandas/matplotlib visualizations. The module necessary 
+
+``` python
+
+org_per.plot_terms_headline("Named Entities - MX", tokensdictionary)
+
+
+```
+
+The plot_terms_body method is a way to visualize higher amounts of data. There is some discussion we could have with regards to the proper way to pass along 
+arguments for matplotlib. 
+
+``` python
+
+
+org_per.plot_terms_body("Named Entities - MX", tokensdictionary)
+
+```
