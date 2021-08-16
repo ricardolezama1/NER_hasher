@@ -6,8 +6,14 @@ Created on Sat Nov 28 12:25:20 2020
 Count the number of tames ANY
 """
 
+import matplotlib.pyplot as plt
+
+import numpy as np
+
 import spacy
+
 import spacy.attrs
+
 nlp = spacy.load('es_core_news_sm')
 
 
@@ -55,22 +61,17 @@ def map_entities(tokens):
         return None
 
     
-    
-import matplotlib.pyplot as plt
-import numpy as np
-
-
 def plot_terms_body(topic, data):
     """
-The no.aranage attribution is to understand how to best and programmatically 
+    The np.aranage attribute is to understand how to best and programmatically 
     plot the data. Intervals are determined by the counts within the dictionary. 
     The user does not need to predefine the graph. Instead, the second line takes the 
-    frequency. Appropriate for body  metadata. 
-    
-    Args: Topic is the name of the plot/category. Data is a dictionary with frequency counts.
+    frequency.
+
+    Args: Topic is the name of the plot/category. The 'data' is  a dictionary. 
     
     No object returned. However, plot is automatically generated.
-        """
+    """
     #The bar plot should be optimized for the max and min size of
     #individual 
     filter_ones = {term:frequency for term, frequency in data.items() if frequency > 10}  
@@ -91,10 +92,10 @@ The no.aranage attribution is to understand how to best and programmatically
     
 def plot_terms_headline(topic, data):
     """
-    The no.aranage attribution is to understand how to best and programmatically 
+    The no.aranage attribute is to understand how to best and programmatically 
     plot the data. Intervals are determined by the counts within the dictionary. 
     The user does not need to predefine the graph. Instead, the second line takes the 
-    frequency
+    frequency.
     
     Args: Topic is the name of the plot/category. Data is a dictionary with frequency counts.
     
@@ -114,3 +115,4 @@ def plot_terms_headline(topic, data):
     plt.title(str(topic), fontsize=14)
     plt.tight_layout()
     plt.show()
+    return filtered
