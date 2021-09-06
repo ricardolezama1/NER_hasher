@@ -9,11 +9,6 @@ The functions here are designed to extract entities from text.
 They are hard coded to GEO entities and PER entities from the Spacy-NER module(s).
 The loaded module is `es_core_news_sm`.  Count the number of times a word appears inside of a corpus. 
 """
-
-import matplotlib.pyplot as plt
-
-import numpy as np
-
 import spacy
 
 import spacy.attrs
@@ -63,5 +58,3 @@ def map_entities(tokens):
         return hash_map
     else:
         return None
-
- 
