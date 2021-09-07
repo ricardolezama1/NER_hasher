@@ -4,7 +4,7 @@ Using the below scripts, you can extract persons and organizations. I recommend 
 Count the entities and roll out with a json with the org/person entities. 
 
 Using spacy, you can hash the entities extracted from a corpus. We will use the lighter Spanish language model from Spacy's natural language toolkit. If you can not run the below code, then you'll need to pip install that spacy language model. 
-```
+``` python
 import spacy
 import spacy.attrs
 nlp = spacy.load('es_core_news_sm')
@@ -20,7 +20,7 @@ Finally, the actual hard work involves identifying distinct entities. These NER 
 
 The actual hashing is a simple enough method involving placing NER text with its frequency count as a value in a dictionary.
 
-```
+``` python
 import org_per
 
 entities = org_per.sacalasentidades(raw_corpus)
